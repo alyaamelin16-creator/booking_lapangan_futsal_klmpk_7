@@ -1,4 +1,3 @@
-
 const KEY_HAPUS_JADWAL = "jadwalLapangan";
 
 // Menghapus jadwal setelah mendapat konfirmasi
