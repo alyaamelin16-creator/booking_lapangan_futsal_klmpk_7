@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Jadwal Lapangan</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f4f6f8;
+            color: #263238;
+        }
+
+        h1, h2 {
+            color: #174a7e;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input, select {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 8px 4px 8px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #1769aa;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #104d80;
+        }
+
+        .btn-hapus {
+            background-color: #c62828;
+        }
+
+        .btn-hapus:hover {
+            background-color: #8e1717;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1769aa;
+            color: white;
+        }
+
+        #pesanTambah, #pesanEdit, #pesanHapus {
+            font-weight: bold;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kelola Jadwal Lapangan</h1>
+
+    <!-- FITUR TAMBAH JADWAL -->
+    <section>
+        <h2>Tambah Jadwal Lapangan</h2>
+
+        <form id="formTambahJadwal">
+            <label for="namaLapangan">Nama Lapangan</label>
+            <input
+                type="text"
+                id="namaLapangan"
+                placeholder="Contoh: Lapangan A"
+                required
+            >
+
+            <label for="tanggal">Tanggal</label>
+            <input type="date" id="tanggal" required>
+
+            <label for="jamMulai">Jam Mulai</label>
+            <input type="time" id="jamMulai" required>
+
+            <label for="jamSelesai">Jam Selesai</label>
+            <input type="time" id="jamSelesai" required>
+
+            <label for="pemesan">Nama Pemesan</label>
+            <input
+                type="text"
+                id="pemesan"
+                placeholder="Nama pemesan"
+                required
+            >
+
+            <button type="submit">Tambah Jadwal</button>
+        </form>
+
+        <p id="pesanTambah" role="status"></p>
+    </section>
+
+    <!-- FITUR LIHAT JADWAL -->
+    <section>
+        <h2>Lihat Jadwal Lapangan</h2>
+
+        <button type="button" id="btnLihatJadwal">
+            Muat Jadwal
+        </button>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Lapangan</th>
+                        <th>Tanggal</th>
+                        <th>Jam</th>
+                        <th>Pemesan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="daftarJadwal">
+                    <tr>
+                        <td colspan="6">Memuat jadwal...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="pesanHapus" role="status"></p>
+    </section>
+
+    <!-- FORM EDIT JADWAL -->
+    <section>
+        <h2>Edit Jadwal Lapangan</h2>
+
+        <form id="formEditJadwal" hidden>
+            <input type="hidden" id="editId">
+
+            <label for="editNamaLapangan">Nama Lapangan</label>
+            <input type="text" id="editNamaLapangan" required>
+
+            <label for="editTanggal">Tanggal</label>
+            <input type="date" id="editTanggal" required>
+
+            <label for="editJamMulai">Jam Mulai</label>
+            <input type="time" id="editJamMulai" required>
+
+            <label for="editJamSelesai">Jam Selesai</label>
+            <input type="time" id="editJamSelesai" required>
+
+            <label for="editPemesan">Nama Pemesan</label>
+            <input type="text" id="editPemesan" required>
+
+            <label for="editStatus">Status</label>
+            <select id="editStatus" required>
+                <option value="Dipesan">Dipesan</option>
+                <option value="Dikonfirmasi">Dikonfirmasi</option>
+                <option value="Selesai">Selesai</option>
+                <option value="Dibatalkan">Dibatalkan</option>
+            </select>
+
+            <button type="submit">Simpan Perubahan</button>
+            <button type="button" id="btnBatalEdit">Batal</button>
+        </form>
+
+        <p id="pesanEdit" role="status"></p>
+    </section>
+
+    <!-- SCRIPT FITUR -->
+    <script src="lihat-jadwal.js"></script>
+    <script src="tambah-jadwal.js"></script>
+    <script src="edit-jadwal.js"></script>
+    <script src="hapus-jadwal.js"></script>
+</body>
+</html>
