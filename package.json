@@ -1,0 +1,8 @@
+{
+  "name": "martana-3-halaman",
+  "version": "1.0.0",
+  "description": "Tiga bagian UI Martana: logo, login, dan beranda",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.21.2" }
+}

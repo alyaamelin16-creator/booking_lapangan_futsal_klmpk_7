@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martana - Beranda</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-bg">
+  <main class="phone-frame home-frame">
+    <header class="home-header">
+      <div class="profile-row">
+        <div class="profile-avatar">M</div>
+        <div><small id="roleName">Pelanggan</small><strong id="userName">Halo, Pengguna!</strong></div>
+      </div>
+      <a class="notification" href="#" aria-label="Notifikasi">♧</a>
+    </header>
+    <section class="home-content">
+      <div class="hero-card">
+        <div>
+          <span class="hero-kicker">MARTANA SPORT</span>
+          <h1 id="heroTitle">Mau main hari ini?</h1>
+          <p id="heroText">Cek jadwal dan temukan lapangan yang cocok untukmu.</p>
+          <a class="btn btn-white" href="#menu">Lihat Menu</a>
+        </div>
+        <div class="hero-ball">⚽</div>
+      </div>
+      <h2>Menu Utama</h2>
+      <div id="menu" class="menu-grid">
+        <a class="menu-tile" href="#" data-message="Menu cek jadwal dipilih."><span class="tile-icon">▦</span><strong>Cek Jadwal</strong><small>Lihat waktu tersedia</small></a>
+        <a class="menu-tile" href="#" data-message="Menu booking dipilih."><span class="tile-icon">⚽</span><strong>Booking Lapangan</strong><small>Pesan lapangan</small></a>
+        <a class="menu-tile" href="#" data-message="Menu riwayat dipilih."><span class="tile-icon">▤</span><strong>Riwayat Booking</strong><small>Lihat pemesanan</small></a>
+        <a class="menu-tile" href="#" data-message="Menu pembayaran dipilih."><span class="tile-icon">▣</span><strong>Pembayaran</strong><small>Cek pembayaran</small></a>
+      </div>
+      <div class="section-title"><h2 id="activityTitle">Informasi Lapangan</h2><span class="pill">Hari ini</span></div>
+      <div class="activity-list">
+      <article class="activity-card">
+        <div class="field-picture">⚽</div>
+        <div class="activity-info"><strong>Lapangan Futsal</strong><small>Lapangan tersedia untuk dipesan</small></div>
+        <span class="available">Tersedia</span>
+      </article>
+      <article class="activity-card">
+        <div class="field-picture alt">◷</div>
+        <div class="activity-info"><strong>Jadwal Operasional</strong><small>Periksa tanggal dan jam sebelum booking</small></div>
+      </article>
+      </div>
+    </section>
+    <nav class="bottom-nav">
+      <a class="active" href="beranda.html"><span>⌂</span>Beranda</a>
+      <a href="#menu"><span>▦</span>Menu</a>
+      <a href="login.html" id="logout"><span>↪</span>Keluar</a>
+    </nav>
+    <div id="toast" class="toast" aria-live="polite"></div>
+  </main>
+  <script src="js/beranda.js"></script>
+</body>
+</html>

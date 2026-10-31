@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e5f1fc">
+  <title>Martana - Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-bg">
+  <main class="phone-frame auth-frame">
+    <a class="mini-brand" href="logo.html"><span class="mini-ball">⚽</span> MARTANA</a>
+
+    <div class="auth-heading">
+      <p class="eyebrow">MARTANA SPORT</p>
+      <h1>Selamat Datang!</h1>
+      <p>Silakan login untuk melanjutkan</p>
+    </div>
+
+    <form id="loginForm" class="form-card" novalidate>
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" placeholder="Masukkan username" autocomplete="username" required>
+
+      <label for="password">Password</label>
+      <div class="password-wrap">
+        <input id="password" name="password" type="password" placeholder="Masukkan password" autocomplete="current-password" required>
+        <button class="password-toggle" type="button" id="togglePassword" aria-label="Tampilkan password" aria-pressed="false">Lihat</button>
+      </div>
+
+      <label for="role">Login sebagai</label>
+      <select id="role" name="role" required>
+        <option value="pelanggan">Pelanggan</option>
+        <option value="penjaga">Penjaga</option>
+        <option value="owner">Owner</option>
+      </select>
+
+      <button class="btn btn-teal full" type="submit">Login <span aria-hidden="true"></span></button>
+      <p class="demo-note">Masukkan username dan password untuk melanjutkan ke beranda Martana.</p>
+    </form>
+
+    <p class="bottom-copy">Belum punya akun? <a href="#" id="registerLink">Registrasi</a></p>
+    <div id="message" class="message" aria-live="polite"></div>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+</html>
